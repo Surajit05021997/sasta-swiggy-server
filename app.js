@@ -9,7 +9,7 @@ const Razorpay = require('Razorpay');
 const cors = require('cors');
 
 
-const whitelist = ['http://localhost:5173', 'https://sastaswiggy.netlify.app']
+const whitelist = ['http://localhost:5173/checkout', 'https://sastaswiggy.netlify.app/checkout']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
