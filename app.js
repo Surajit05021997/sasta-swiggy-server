@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
-import Razorpay from 'Razorpay';
+// import Razorpay from 'Razorpay';
 import cors from 'cors';
 
 // const express = require('express');
