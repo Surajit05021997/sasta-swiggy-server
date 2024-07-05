@@ -1,15 +1,15 @@
-// import express from 'express';
-// import 'dotenv/config';
-// import Razorpay from 'Razorpay';
-// import cors from 'cors';
+import express from 'express';
+import 'dotenv/config';
+import Razorpay from 'Razorpay';
+import cors from 'cors';
 
-const express = require('express');
-require('dotenv').config();
-const Razorpay = require('Razorpay');
-const cors = require('cors');
+// const express = require('express');
+// require('dotenv').config();
+// const Razorpay = require('Razorpay');
+// const cors = require('cors');
 
 
-const whitelist = ['http://localhost:5173/checkout', 'https://sastaswiggy.netlify.app/checkout']
+const whitelist = ['http://localhost:5173', 'https://sastaswiggy.netlify.app']
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
