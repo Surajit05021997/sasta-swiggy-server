@@ -1,24 +1,24 @@
 const express = require('express');
-require('dotenv').config();
 const Razorpay = require('razorpay');
 const cors = require('cors');
+require('dotenv').config();
 
-const whitelist = ['http://localhost:5173', 'https://sastaswiggy.netlify.app']
+const whitelist = ['http://localhost:5173', 'https://sastaswiggy.netlify.app'];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
-    } else {;
+    } else {
       callback(new Error('Not allowed by CORS'));
     }
-  }
+  },
 }
 
 const app = express();
 app.use(cors(corsOptions));
 
 app.get('/', (req, res) => {
-  res.send("Hello World");
+  res.send("Sasta swiggy server running");
 });
 
 app.post('/order', async (req, res) => {
@@ -39,7 +39,6 @@ app.post('/order', async (req, res) => {
     res.status(500).send(error);
   }
 });
-
 
 app.listen(process.env.PORT, () => {
   console.log(`App running on port ${process.env.PORT}`);
