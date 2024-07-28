@@ -28,7 +28,6 @@ app.post('/order', async (req, res) => {
 
     const order = await instance.orders.create({
       amount: req.body.amount,
-      amount: 50000,
       currency: "INR",
       receipt: "receipt#1",
       notes: {
