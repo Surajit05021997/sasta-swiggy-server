@@ -26,7 +26,7 @@ app.post('/order', async (req, res) => {
     const instance = new Razorpay({ key_id: process.env.RAZORPAY_KEY_ID, key_secret: process.env.RAZORPAY_KEY_SECRET })
 
     const order = await instance.orders.create({
-      amount: 50000,
+      amount: req.body.amount * 100,
       currency: "INR",
       receipt: "receipt#1",
       notes: {
