@@ -15,7 +15,7 @@ const corsOptions = {
 }
 
 const app = express();
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.send("Sasta swiggy server running");
@@ -26,7 +26,8 @@ app.post('/order', async (req, res) => {
     const instance = new Razorpay({ key_id: process.env.RAZORPAY_KEY_ID, key_secret: process.env.RAZORPAY_KEY_SECRET })
 
     const order = await instance.orders.create({
-      amount: req.body.amount * 100,
+      // amount: req.body.amount * 100,
+      amount: 50000,
       currency: "INR",
       receipt: "receipt#1",
       notes: {
